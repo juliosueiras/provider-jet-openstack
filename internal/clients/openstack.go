@@ -24,6 +24,7 @@ import (
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
+	"fmt"
 
 	"github.com/crossplane/terrajet/pkg/terraform"
 
@@ -91,9 +92,9 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			"user_name": openstackCreds["user_name"],
 			"password": openstackCreds["password"],
 			"tenant_name": openstackCreds["tenant_name"],
-			"auth_url": openstackcreds["auth_url"],
-			"region": openstackcreds["region"],
-			"insecure": openstackcreds["insecure"],
+			"auth_url": openstackCreds["auth_url"],
+			"region": openstackCreds["region"],
+			"insecure": openstackCreds["insecure"],
 		}
 		return ps, nil
 	}
