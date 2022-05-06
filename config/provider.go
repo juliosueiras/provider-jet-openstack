@@ -22,13 +22,11 @@ import (
 
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-
-	"github.com/crossplane-contrib/provider-jet-template/config/null"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "openstack"
+	modulePath     = "github.com/juliosueiras/provider-jet-openstack"
 )
 
 //go:embed schema.json
@@ -47,8 +45,6 @@ func GetProvider() *tjconfig.Provider {
 		tjconfig.WithDefaultResourceFn(defaultResourceFn))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
-		// add custom config functions
-		null.Configure,
 	} {
 		configure(pc)
 	}

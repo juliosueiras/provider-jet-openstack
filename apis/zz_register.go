@@ -22,15 +22,43 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/crossplane-contrib/provider-jet-template/apis/null/v1alpha1"
-	v1alpha1apis "github.com/crossplane-contrib/provider-jet-template/apis/v1alpha1"
+	v1alpha1 "github.com/juliosueiras/provider-jet-openstack/apis/blockstorage/v1alpha1"
+	v1alpha1compute "github.com/juliosueiras/provider-jet-openstack/apis/compute/v1alpha1"
+	v1alpha1containerinfra "github.com/juliosueiras/provider-jet-openstack/apis/containerinfra/v1alpha1"
+	v1alpha1db "github.com/juliosueiras/provider-jet-openstack/apis/db/v1alpha1"
+	v1alpha1dns "github.com/juliosueiras/provider-jet-openstack/apis/dns/v1alpha1"
+	v1alpha1fw "github.com/juliosueiras/provider-jet-openstack/apis/fw/v1alpha1"
+	v1alpha1identity "github.com/juliosueiras/provider-jet-openstack/apis/identity/v1alpha1"
+	v1alpha1images "github.com/juliosueiras/provider-jet-openstack/apis/images/v1alpha1"
+	v1alpha1keymanager "github.com/juliosueiras/provider-jet-openstack/apis/keymanager/v1alpha1"
+	v1alpha1lb "github.com/juliosueiras/provider-jet-openstack/apis/lb/v1alpha1"
+	v1alpha1networking "github.com/juliosueiras/provider-jet-openstack/apis/networking/v1alpha1"
+	v1alpha1objectstorage "github.com/juliosueiras/provider-jet-openstack/apis/objectstorage/v1alpha1"
+	v1alpha1orchestration "github.com/juliosueiras/provider-jet-openstack/apis/orchestration/v1alpha1"
+	v1alpha1sharedfilesystem "github.com/juliosueiras/provider-jet-openstack/apis/sharedfilesystem/v1alpha1"
+	v1alpha1apis "github.com/juliosueiras/provider-jet-openstack/apis/v1alpha1"
+	v1alpha1vpnaas "github.com/juliosueiras/provider-jet-openstack/apis/vpnaas/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1compute.SchemeBuilder.AddToScheme,
+		v1alpha1containerinfra.SchemeBuilder.AddToScheme,
+		v1alpha1db.SchemeBuilder.AddToScheme,
+		v1alpha1dns.SchemeBuilder.AddToScheme,
+		v1alpha1fw.SchemeBuilder.AddToScheme,
+		v1alpha1identity.SchemeBuilder.AddToScheme,
+		v1alpha1images.SchemeBuilder.AddToScheme,
+		v1alpha1keymanager.SchemeBuilder.AddToScheme,
+		v1alpha1lb.SchemeBuilder.AddToScheme,
+		v1alpha1networking.SchemeBuilder.AddToScheme,
+		v1alpha1objectstorage.SchemeBuilder.AddToScheme,
+		v1alpha1orchestration.SchemeBuilder.AddToScheme,
+		v1alpha1sharedfilesystem.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
+		v1alpha1vpnaas.SchemeBuilder.AddToScheme,
 	)
 }
 
